@@ -7,9 +7,11 @@ class Block {
     public:
         string sPrevHash;
 
-        Block(uint32_t nDifficulty);
+        Block(uint32_t nIndexIn, const string &sDataIn);
 
-        voic MineBlock(uint32_t nDifficulty);
+        string GetHash();
+
+        void MineBlock(uint32_t nDifficulty);
 
     private:
         uint32_t _nIndex;

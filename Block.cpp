@@ -28,3 +28,10 @@ void Block::MineBlock(uint32_t nDifficulty) {
 
     cout << "Block mined: " << _sHash << endl;
 }
+
+inline string Block::_CalculateHash() const {
+    stringstream ss;
+    ss << _nIndex << _tTime << _sData << _nNonce << sPrevHash;
+
+    return sha256(ss.str());
+}
